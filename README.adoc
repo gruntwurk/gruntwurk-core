@@ -1,0 +1,4 @@
+= GruntWurk Core
+
+Core library for the GruntWurk suite.
+
