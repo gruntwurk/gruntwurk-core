@@ -25,7 +25,7 @@ namespace GruntWurk {
             }
             if (LogFilename != null && LogFilename.Length > 0) {
                 using (StreamWriter sw = File.AppendText(LogFilename)) {
-                    sw.WriteLine(msg,arg);
+                    sw.WriteLine(msg, arg);
                 }
             }
         }
@@ -51,10 +51,9 @@ namespace GruntWurk {
         }
         public static void timestamp(string msg) {
             DateTime stamp = DateTime.Now;
-            if (previousTimestamp != DateTime.MinValue)
-            {
+            if (previousTimestamp != DateTime.MinValue) {
                 TimeSpan span = stamp - previousTimestamp;
-                msg = string.Format("{0} (elapsed {1})",msg,span.ToString());
+                msg = string.Format("{0} (elapsed {1})", msg, span.ToString());
             }
             if (InfoEnabled) {
                 if (UseConsole) {

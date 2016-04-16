@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using static GruntWurk.QuickLog;
 
-namespace GruntWurk
-{
+namespace GruntWurk {
     /// <summary>
     /// Create a New INI file to store or load data
     /// </summary>
@@ -149,6 +148,7 @@ namespace GruntWurk
             log("");
         }
     }
+
     /// <summary>
     /// Any entries that appear above the first section will have section of "".
     /// Any comments that appear after the last entry in a section (above the
@@ -163,5 +163,4 @@ namespace GruntWurk
             return leadingComment == "" && section == "" && key == "" && value == "";
         }
     }
-
 }

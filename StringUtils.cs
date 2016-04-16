@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace GruntWurk
-{
+namespace GruntWurk {
     /// <summary>
     /// Misc. methods for manipulating strings.
     /// </summary>
     public class StringUtils {
 
-    	// This is how delimiters need to be specified when using the Split() function.
+        // This is how delimiters need to be specified when using the Split() function.
         public static readonly char[] JUST_NEWLINE = { '\n' };
         public static readonly char[] JUST_COMMA = { ',' };
         public static readonly char[] JUST_PERIOD = { '.' };
@@ -89,18 +88,14 @@ namespace GruntWurk
         }
 
         // LTrimZeros() returns the given string less any leading zeros
-        public static string LTrimZeros(string Original ) {
+        public static string LTrimZeros(string Original) {
             for (int p = 0; p < Original.Length; p++) {
                 if (Original[p] != '0') {
-                    return Mid(Original, p+1, 9999);
+                    return Mid(Original, p + 1, 9999);
                 }
             }
             return "0";
         }
-
-
-
-
     }
 }
 
