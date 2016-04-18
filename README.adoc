@@ -2,3 +2,6 @@
 
 Core library for the GruntWurk suite.
 
+== See Also
+
+include::DESIGN_PHILOSOPHY.adoc[]

@@ -1,0 +1,20 @@
+= GruntWurk Design Philosophy
+
+== Keeping Things Simple
+
+Some Examples:
+
+* Using old-fashioned INI files for the specifications, as opposed to something like XML.  Non-programmer users are comfortable with this tried-and-true format.
+* Using our own QuickLog utility rather than something like Log4Net. QuickLog offers limited functionality, but it requires zero configuration, and the functionality it offers is exactly what we need.
+* For the command-line tools in this suite, using the CommonOptions base class to standardize certain switches.
+
+== Keeping Things Neat and Tidy
+
+* Refactoring early and often.
+* Making sure the API documentation (on public methods and functions) are accurate.
+
+== Leaning Towards Functional Programming
+
+* Given a choice, we prefer stateless functions (static methods) that operate solely on the arguments passed in and affect nothing but the result that is returned.
+* In such a world, OOP-style code is limited to creating domain-specific variable types that are merely one step above primitives.
+* Stateless functions are much easier to unit-test than objects with changing state (much less whole systems of intertwined objects).
