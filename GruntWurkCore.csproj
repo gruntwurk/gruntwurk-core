@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonOptions.cs" />
+    <Compile Include="DateTimeUtils.cs" />
     <Compile Include="FileUtils.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="NumberUtils.cs" />

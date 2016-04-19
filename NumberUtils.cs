@@ -34,5 +34,50 @@ namespace GruntWurk {
             int adjustedEnd = (specEnd < 1) ? actualCount + specEnd : specEnd;
             return operand >= specStart && operand <= adjustedEnd;
         }
+
+
+        /// <summary>
+        /// Parses out the starting value of a given range.
+        /// </summary>
+        /// <param name="RangeSpec">A range in the form of "3..9", "3..N", or "3..N-1"</param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">Only the caller knows how to report the issue in context.</exception>
+        public static int StartOfRangeSpec(string RangeSpec) {
+            int p = RangeSpec.IndexOf("..");
+            if (p > 0) {
+                string part = RangeSpec.Substring(0, p);
+                if (part == "N") {
+                    return 0;
+                } else if (part.Substring(0, 1) == "N") {
+                    part = part.Substring(1);
+                }
+                return int.Parse(part);
+            }
+            return int.Parse(RangeSpec);
+
+        }
+
+        /// <summary>
+        /// Parses out the ending value of a given range. If the end is specified as N, or N-2, etc, then the result will be zero or negative.
+        /// 3..0 means the same thing as 3..N, and returns 0.
+        /// 3..-2 means the same thing as 3..N-2, and returns -2.
+        /// 
+        /// </summary>
+        /// <param name="RangeSpec">A range in the form of "3..9", "3..N", or "3..N-1"</param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">Only the caller knows how to report the issue in context.</exception>
+        public static int EndOfRangeSpec(string RangeSpec) {
+            int p = RangeSpec.IndexOf("..");
+            if (p > 0) {
+                string part = RangeSpec.Substring(p + 2).Trim().ToUpper();
+                if (part == "N") {
+                    return 0;
+                } else if (part.Substring(0, 1) == "N") {
+                    part = part.Substring(1);
+                }
+                return int.Parse(part);
+            }
+            return 0;
+        }
     }
 }
